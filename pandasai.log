@@ -1,0 +1,359 @@
+2024-03-09 13:55:02 [INFO] Question: what is the data about ?
+
+2024-03-09 13:55:02 [INFO] Running PandasAI with openai LLM...
+2024-03-09 13:55:02 [INFO] Prompt ID: 0ae84c66-6be4-4bca-9e32-80881c9478cc
+2024-03-09 13:55:02 [INFO] Using prompt: You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 175028 rows and 25 columns.
+This is the metadata of the dataframe dfs[0]:
+Surname,CreditScore,Age,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary,Exited,Surname_tfidf_0,Surname_tfidf_1,Surname_tfidf_2,Surname_tfidf_3,Surname_tfidf_4,France,Germany,Spain,Female,Male,Mem__no__Products,Cred_Bal_Sal,Bal_sal,Tenure_Age,Age_Tenure_product
+2023,668.0,33.0,3.0,0.0,2.0,1,0,181449.97,0,-3.1244366797644965e-07,-4.605946403227531e-07,1.3351443755819488e-06,-6.116396019037456e-06,6.694577725071584e-06,1,0,0,0,1,0.0,0.0,0.0,0.0909090909090909,99.0
+1362,581.0,34.0,2.0,148882.54,1.0,1,1,84560.88,0,-7.220936002877913e-05,-0.0010461631817033,0.0013129133045912,0.00084630027785,0.0160758430659962,1,0,0,0,1,1.0,1022.9405812711504,1.7606550452171263,0.0588235294117647,68.0
+491,716.0,33.0,5.0,0.0,2.0,1,1,15068.83,0,-1.0371349358508967e-07,-5.451338136373916e-07,4.9845594680825705e-08,-1.568877112962129e-06,1.8489187336374904e-06,0,0,1,0,1,2.0,0.0,0.0,0.1515151515151515,165.0
+2024,627.0,33.0,1.0,0.0,2.0,1,1,49503.5,0,4.813382566920466e-07,8.389315473235292e-07,-1.1828148560094963e-06,7.812514313215494e-06,1.663329080855466e-06,1,0,0,0,1,2.0,0.0,0.0,0.0303030303030303,33.0
+1236,678.0,40.0,10.0,0.0,2.0,1,0,184866.69,0,-0.000344729417265,-0.0020250336590556,-0.0010280719705962,-0.0093871551466503,0.0150686431433634,1,0,0,0,1,0.0,0.0,0.0,0.25,400.0
+</dataframe>
+
+<conversation>
+User: what is the data about ?
+
+</conversation>
+
+This is the initial python function. Do not change the params. Given the context, use the right dataframes.
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Take a deep breath and reason step-by-step. Act as a senior data analyst.
+In the answer, you must never write the "technical" names of the tables.
+Based on the last message in the conversation:
+- return the updated analyze_data function wrapped within ```python ```
+2024-03-09 13:55:04 [INFO] error_code=insufficient_quota error_message='You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.' error_param=None error_type=insufficient_quota message='OpenAI API error received' stream_error=False
+2024-03-09 14:02:51 [INFO] Question: say something about the data
+
+2024-03-09 14:02:51 [INFO] Running PandasAI with openai LLM...
+2024-03-09 14:02:51 [INFO] Prompt ID: b230c347-e6bd-4820-852c-039bfdbe609a
+2024-03-09 14:02:51 [INFO] Using prompt: You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 175028 rows and 25 columns.
+This is the metadata of the dataframe dfs[0]:
+Surname,CreditScore,Age,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary,Exited,Surname_tfidf_0,Surname_tfidf_1,Surname_tfidf_2,Surname_tfidf_3,Surname_tfidf_4,France,Germany,Spain,Female,Male,Mem__no__Products,Cred_Bal_Sal,Bal_sal,Tenure_Age,Age_Tenure_product
+491,716.0,33.0,5.0,0.0,2.0,1,1,15068.83,0,-1.0371349358508967e-07,-5.451338136373916e-07,4.9845594680825705e-08,-1.568877112962129e-06,1.8489187336374904e-06,0,0,1,0,1,2.0,0.0,0.0,0.1515151515151515,165.0
+2023,668.0,33.0,3.0,0.0,2.0,1,0,181449.97,0,-3.1244366797644965e-07,-4.605946403227531e-07,1.3351443755819488e-06,-6.116396019037456e-06,6.694577725071584e-06,1,0,0,0,1,0.0,0.0,0.0,0.0909090909090909,99.0
+1362,581.0,34.0,2.0,148882.54,1.0,1,1,84560.88,0,-7.220936002877913e-05,-0.0010461631817033,0.0013129133045912,0.00084630027785,0.0160758430659962,1,0,0,0,1,1.0,1022.9405812711504,1.7606550452171263,0.0588235294117647,68.0
+1236,678.0,40.0,10.0,0.0,2.0,1,0,184866.69,0,-0.000344729417265,-0.0020250336590556,-0.0010280719705962,-0.0093871551466503,0.0150686431433634,1,0,0,0,1,0.0,0.0,0.0,0.25,400.0
+2024,627.0,33.0,1.0,0.0,2.0,1,1,49503.5,0,4.813382566920466e-07,8.389315473235292e-07,-1.1828148560094963e-06,7.812514313215494e-06,1.663329080855466e-06,1,0,0,0,1,2.0,0.0,0.0,0.0303030303030303,33.0
+</dataframe>
+
+<conversation>
+User: say something about the data
+
+</conversation>
+
+This is the initial python function. Do not change the params. Given the context, use the right dataframes.
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Take a deep breath and reason step-by-step. Act as a senior data analyst.
+In the answer, you must never write the "technical" names of the tables.
+Based on the last message in the conversation:
+- return the updated analyze_data function wrapped within ```python ```
+2024-03-09 14:03:30 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:997)'))': /v1/chat/completions
+2024-03-09 14:04:04 [INFO] error_code=insufficient_quota error_message='You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.' error_param=None error_type=insufficient_quota message='OpenAI API error received' stream_error=False
+2024-03-09 14:10:55 [INFO] Question: say about the data
+
+2024-03-09 14:10:55 [INFO] Running PandasAI with openai LLM...
+2024-03-09 14:10:55 [INFO] Prompt ID: 337dfc26-8e82-427a-8b4a-091cae03cae0
+2024-03-09 14:10:55 [INFO] Using prompt: You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 175028 rows and 25 columns.
+This is the metadata of the dataframe dfs[0]:
+Surname,CreditScore,Age,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary,Exited,Surname_tfidf_0,Surname_tfidf_1,Surname_tfidf_2,Surname_tfidf_3,Surname_tfidf_4,France,Germany,Spain,Female,Male,Mem__no__Products,Cred_Bal_Sal,Bal_sal,Tenure_Age,Age_Tenure_product
+2023,668.0,33.0,3.0,0.0,2.0,1,0,181449.97,0,-3.1244366797644965e-07,-4.605946403227531e-07,1.3351443755819488e-06,-6.116396019037456e-06,6.694577725071584e-06,1,0,0,0,1,0.0,0.0,0.0,0.0909090909090909,99.0
+1236,678.0,40.0,10.0,0.0,2.0,1,0,184866.69,0,-0.000344729417265,-0.0020250336590556,-0.0010280719705962,-0.0093871551466503,0.0150686431433634,1,0,0,0,1,0.0,0.0,0.0,0.25,400.0
+491,716.0,33.0,5.0,0.0,2.0,1,1,15068.83,0,-1.0371349358508967e-07,-5.451338136373916e-07,4.9845594680825705e-08,-1.568877112962129e-06,1.8489187336374904e-06,0,0,1,0,1,2.0,0.0,0.0,0.1515151515151515,165.0
+2024,627.0,33.0,1.0,0.0,2.0,1,1,49503.5,0,4.813382566920466e-07,8.389315473235292e-07,-1.1828148560094963e-06,7.812514313215494e-06,1.663329080855466e-06,1,0,0,0,1,2.0,0.0,0.0,0.0303030303030303,33.0
+1362,581.0,34.0,2.0,148882.54,1.0,1,1,84560.88,0,-7.220936002877913e-05,-0.0010461631817033,0.0013129133045912,0.00084630027785,0.0160758430659962,1,0,0,0,1,1.0,1022.9405812711504,1.7606550452171263,0.0588235294117647,68.0
+</dataframe>
+
+<conversation>
+User: say about the data
+
+</conversation>
+
+This is the initial python function. Do not change the params. Given the context, use the right dataframes.
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Take a deep breath and reason step-by-step. Act as a senior data analyst.
+In the answer, you must never write the "technical" names of the tables.
+Based on the last message in the conversation:
+- return the updated analyze_data function wrapped within ```python ```
+2024-03-09 14:10:57 [INFO] error_code=insufficient_quota error_message='You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.' error_param=None error_type=insufficient_quota message='OpenAI API error received' stream_error=False
+2024-03-09 14:22:20 [INFO] Question: say something about dataset
+2024-03-09 14:22:20 [INFO] Running PandasAI with openai LLM...
+2024-03-09 14:22:20 [INFO] Prompt ID: e0ac380d-11c2-4a4e-8dd3-20c2f05fd088
+2024-03-09 14:22:20 [INFO] Using prompt: You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 175028 rows and 25 columns.
+This is the metadata of the dataframe dfs[0]:
+Surname,CreditScore,Age,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary,Exited,Surname_tfidf_0,Surname_tfidf_1,Surname_tfidf_2,Surname_tfidf_3,Surname_tfidf_4,France,Germany,Spain,Female,Male,Mem__no__Products,Cred_Bal_Sal,Bal_sal,Tenure_Age,Age_Tenure_product
+1236,678.0,40.0,10.0,0.0,2.0,1,0,184866.69,0,-0.000344729417265,-0.0020250336590556,-0.0010280719705962,-0.0093871551466503,0.0150686431433634,1,0,0,0,1,0.0,0.0,0.0,0.25,400.0
+1362,581.0,34.0,2.0,148882.54,1.0,1,1,84560.88,0,-7.220936002877913e-05,-0.0010461631817033,0.0013129133045912,0.00084630027785,0.0160758430659962,1,0,0,0,1,1.0,1022.9405812711504,1.7606550452171263,0.0588235294117647,68.0
+2024,627.0,33.0,1.0,0.0,2.0,1,1,49503.5,0,4.813382566920466e-07,8.389315473235292e-07,-1.1828148560094963e-06,7.812514313215494e-06,1.663329080855466e-06,1,0,0,0,1,2.0,0.0,0.0,0.0303030303030303,33.0
+491,716.0,33.0,5.0,0.0,2.0,1,1,15068.83,0,-1.0371349358508967e-07,-5.451338136373916e-07,4.9845594680825705e-08,-1.568877112962129e-06,1.8489187336374904e-06,0,0,1,0,1,2.0,0.0,0.0,0.1515151515151515,165.0
+2023,668.0,33.0,3.0,0.0,2.0,1,0,181449.97,0,-3.1244366797644965e-07,-4.605946403227531e-07,1.3351443755819488e-06,-6.116396019037456e-06,6.694577725071584e-06,1,0,0,0,1,0.0,0.0,0.0,0.0909090909090909,99.0
+</dataframe>
+
+<conversation>
+User: say something about dataset
+</conversation>
+
+This is the initial python function. Do not change the params. Given the context, use the right dataframes.
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Take a deep breath and reason step-by-step. Act as a senior data analyst.
+In the answer, you must never write the "technical" names of the tables.
+Based on the last message in the conversation:
+- return the updated analyze_data function wrapped within ```python ```
+2024-03-09 14:22:22 [INFO] error_code=insufficient_quota error_message='You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.' error_param=None error_type=insufficient_quota message='OpenAI API error received' stream_error=False
+2024-03-09 14:36:38 [INFO] Question: say something about my dataset
+2024-03-09 14:36:38 [INFO] Running PandasAI with openai LLM...
+2024-03-09 14:36:38 [INFO] Prompt ID: e620d597-da1c-4704-99af-9d20f950f2e6
+2024-03-09 14:36:38 [INFO] Using prompt: You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 418 rows and 12 columns.
+This is the metadata of the dataframe dfs[0]:
+PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
+892,0,3,"Kelly, Mr. James",male,34.5,0,0,330911,7.8292,,Q
+896,1,3,"Hirvonen, Mrs. Alexander (Helga E Lindqvist)",female,22.0,1,1,3101298,12.2875,,S
+894,0,2,"Myles, Mr. Thomas Francis",male,62.0,0,0,240276,9.6875,,Q
+895,0,3,"Wirz, Mr. Albert",male,27.0,0,0,315154,8.6625,,S
+893,1,3,"Wilkes, Mrs. James (Ellen Needs)",female,47.0,1,0,363272,7.0,,S
+</dataframe>
+
+<conversation>
+User: say something about my dataset
+</conversation>
+
+This is the initial python function. Do not change the params. Given the context, use the right dataframes.
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Take a deep breath and reason step-by-step. Act as a senior data analyst.
+In the answer, you must never write the "technical" names of the tables.
+Based on the last message in the conversation:
+- return the updated analyze_data function wrapped within ```python ```
+2024-03-09 14:36:39 [INFO] error_code=insufficient_quota error_message='You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.' error_param=None error_type=insufficient_quota message='OpenAI API error received' stream_error=False
+2024-03-09 14:38:31 [INFO] Question: say something about the dataset
+
+2024-03-09 14:38:31 [INFO] Running PandasAI with openai LLM...
+2024-03-09 14:38:31 [INFO] Prompt ID: 6f9afa13-e599-4dd3-9daa-aae37041dc40
+2024-03-09 14:38:31 [INFO] Using prompt: You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 418 rows and 12 columns.
+This is the metadata of the dataframe dfs[0]:
+PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
+892,0,3,"Kelly, Mr. James",male,34.5,0,0,330911,7.8292,,Q
+895,0,3,"Wirz, Mr. Albert",male,27.0,0,0,315154,8.6625,,S
+893,1,3,"Wilkes, Mrs. James (Ellen Needs)",female,47.0,1,0,363272,7.0,,S
+896,1,3,"Hirvonen, Mrs. Alexander (Helga E Lindqvist)",female,22.0,1,1,3101298,12.2875,,S
+894,0,2,"Myles, Mr. Thomas Francis",male,62.0,0,0,240276,9.6875,,Q
+</dataframe>
+
+<conversation>
+User: say something about the dataset
+
+</conversation>
+
+This is the initial python function. Do not change the params. Given the context, use the right dataframes.
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Take a deep breath and reason step-by-step. Act as a senior data analyst.
+In the answer, you must never write the "technical" names of the tables.
+Based on the last message in the conversation:
+- return the updated analyze_data function wrapped within ```python ```
+2024-03-09 14:38:35 [INFO] error_code=insufficient_quota error_message='You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.' error_param=None error_type=insufficient_quota message='OpenAI API error received' stream_error=False
+2024-03-09 14:39:00 [INFO] Question: hey
+2024-03-09 14:39:00 [INFO] Running PandasAI with openai LLM...
+2024-03-09 14:39:00 [INFO] Prompt ID: 4d4c4ffb-f435-46b0-bd57-6bc70c65c17f
+2024-03-09 14:39:00 [INFO] Using prompt: You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 418 rows and 12 columns.
+This is the metadata of the dataframe dfs[0]:
+PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
+895,0,3,"Wirz, Mr. Albert",male,27.0,0,0,315154,8.6625,,S
+896,1,3,"Hirvonen, Mrs. Alexander (Helga E Lindqvist)",female,22.0,1,1,3101298,12.2875,,S
+892,0,3,"Kelly, Mr. James",male,34.5,0,0,330911,7.8292,,Q
+894,0,2,"Myles, Mr. Thomas Francis",male,62.0,0,0,240276,9.6875,,Q
+893,1,3,"Wilkes, Mrs. James (Ellen Needs)",female,47.0,1,0,363272,7.0,,S
+</dataframe>
+
+<conversation>
+User: hey
+</conversation>
+
+This is the initial python function. Do not change the params. Given the context, use the right dataframes.
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Take a deep breath and reason step-by-step. Act as a senior data analyst.
+In the answer, you must never write the "technical" names of the tables.
+Based on the last message in the conversation:
+- return the updated analyze_data function wrapped within ```python ```
+2024-03-09 14:39:01 [INFO] error_code=insufficient_quota error_message='You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.' error_param=None error_type=insufficient_quota message='OpenAI API error received' stream_error=False
